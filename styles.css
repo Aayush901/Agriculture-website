@@ -1,0 +1,146 @@
+/* General Body Styles */
+body {
+    background-color: #f8f9fa; /* Light grey background */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #e3f2fd; /* Light blue background for the header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #343a40; /* Dark background for the navbar */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px; /* Slightly larger font size */
+    font-weight: bold; /* Bold text */
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #e3f2fd; /* Light blue background for the footer */
+    color: #333;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Section Styles */
+section.container {
+    background-color: #ffffff; /* White background for content sections */
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* List Group Styles */
+.list-group-item {
+    background-color: #ffffff; /* White background for list items */
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Image Styling */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow around images */
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff; /* White background for forms */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input, 
+.form-group select {
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-link {
+    color: #007bff;
+}
+
+.btn-link:hover {
+    color: #0056b3;
+}
+
+/* Contact Us Button at the End of Donation Page */
+.contact-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Additional Spacing for Images */
+.image-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.image-group img {
+    width: 32%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .image-group img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

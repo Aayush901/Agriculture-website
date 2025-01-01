@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Agriculture Site</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="issues.html">Issues</a></li>
+                    <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donation.html">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1>Support Our Farmers</h1>
+    </header>
+
+    <section class="container py-5">
+        <h2>Donate to Help Farmers</h2>
+        <p>Your donation will go directly to helping farmers in need. Please fill out the form below to contribute.</p>
+
+        <!-- Updated form to use POST method -->
+        <form action="donation.php" method="POST">
+            <div class="form-group">
+                <label for="donorName">Name</label>
+                <input type="text" class="form-control" id="donorName" name="donorName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="donorEmail">Email address</label>
+                <input type="email" class="form-control" id="donorEmail" name="donorEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="donationAmount">Donation Amount</label>
+                <input type="number" class="form-control" id="donationAmount" name="donationAmount" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                    <option value="" disabled selected>Select a payment method</option>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bankTransfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <!-- Credit/Debit Card Details -->
+            <div id="cardDetails" class="d-none">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Enter card number">
+                </div>
+                <div class="form-group">
+                    <label for="cardExpiry">Expiry Date</label>
+                    <input type="text" class="form-control" id="cardExpiry" name="cardExpiry" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                    <label for="cardCVC">CVC</label>
+                    <input type="text" class="form-control" id="cardCVC" name="cardCVC" placeholder="CVC">
+                </div>
+            </div>
+
+            <!-- PayPal Details -->
+            <div id="paypalDetails" class="d-none">
+                <div class="form-group">
+                    <label for="paypalEmail">PayPal Email</label>
+                    <input type="email" class="form-control" id="paypalEmail" name="paypalEmail" placeholder="Enter PayPal email">
+                </div>
+            </div>
+
+            <!-- Bank Transfer Details -->
+            <div id="bankDetails" class="d-none">
+                <div class="form-group">
+                    <label for="accountNumber">Bank Account Number</label>
+                    <input type="text" class="form-control" id="accountNumber" name="accountNumber" placeholder="Enter account number">
+                </div>
+                <div class="form-group">
+                    <label for="routingNumber">Routing Number</label>
+                    <input type="text" class="form-control" id="routingNumber" name="routingNumber" placeholder="Enter routing number">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Donate</button>
+        </form>
+
+        <hr>
+
+        <div class="text-center mt-4">
+            <p>If you encounter any issues during the donation process, please <a href="contact.html" class="btn btn-link">Contact Us</a>.</p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Farmers' Issues and Agriculture</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script to show/hide payment details based on the selected method -->
+    <script>
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            var cardDetails = document.getElementById('cardDetails');
+            var paypalDetails = document.getElementById('paypalDetails');
+            var bankDetails = document.getElementById('bankDetails');
+
+            cardDetails.classList.add('d-none');
+            paypalDetails.classList.add('d-none');
+            bankDetails.classList.add('d-none');
+
+            if (this.value === 'creditCard' || this.value === 'debitCard') {
+                cardDetails.classList.remove('d-none');
+            } else if (this.value === 'paypal') {
+                paypalDetails.classList.remove('d-none');
+            } else if (this.value === 'bankTransfer') {
+                bankDetails.classList.remove('d-none');
+            }
+        });
+    </script>
+</body>
+</html>
